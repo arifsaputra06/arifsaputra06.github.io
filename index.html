@@ -153,6 +153,46 @@
             margin-top: 40px;
             font-size: 0.9rem;
         }
+
+        /* --- Tambahan Kode untuk Tampilan HP --- */
+@media (max-width: 600px) {
+    /* 1. Mengatur Header/Navigasi agar menumpuk rapi ke bawah */
+    header, nav {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        padding: 15px 10px;
+    }
+
+    /* 2. Menyeimbangkan ukuran teks nama */
+    header h1 {
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+    }
+
+    /* 3. Merapikan jarak antar menu agar mudah diklik di HP */
+    nav {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+    }
+
+    /* 4. Menyesuaikan ukuran teks Hero Section */
+    .hero h2 {
+        font-size: 2rem;
+        line-height: 1.3;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
