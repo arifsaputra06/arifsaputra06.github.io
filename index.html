@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <style>
+        /* Mengaktifkan ruang 3D pada kontainer utama */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+            perspective: 1000px; /* Memberikan efek jarak pandang mata ke objek 3D */
+        }
+
+        /* Desain Kartu Proyek Efek 3D */
+        .project-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            /* Bayangan berlapis (soft shadow) untuk efek melayang */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08), 0 6px 6px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid #1e293b;
+            
+            /* Mengaktifkan transformasi 3D */
+            transform-style: preserve-3d;
+            transform: rotateX(0deg) rotateY(0deg);
+            transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s ease;
+        }
+
+        /* Efek saat kursor mouse menyentuh kartu (Hover) */
+        .project-card:hover {
+            /* Membuat kartu miring ke depan dan terangkat secara 3D */
+            transform: translateY(-10px) rotateX(10deg) rotateY(-5deg);
+            /* Bayangan menajdi lebih tebal dan turun, memperkuat efek melayang tinggi */
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.15), 0 15px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Efek Pop-Out Teks di dalam kartu */
+        .project-card h3 {
+            margin-top: 0;
+            color: #0f172a;
+            /* Membuat teks judul maju lebih depan dari kartunya (efek timbul) */
+            transform: translateZ(30px);
+        }
+
+        .tech-stack {
+            display: inline-block;
+            background: #e2e8f0;
+            color: #475569;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            /* Membuat label teknologi ikut timbul sedikit ke depan */
+            transform: translateZ(20px);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card h3 {
+            margin-top: 0;
+            color: #0f172a;
+        }
+
+        /* Label Teknologi (Tech Stack) */
+        .tech-stack {
+            display: inline-block;
+            background: #e2e8f0;
+            color: #475569;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        /* Mengatur font dan warna dasar web */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        /* Mendesain navigasi / menu atas */
+        header {
+            background-color: #1e293b;
+            color: white;
+            padding: 10px 10%;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            padding: 0;
+        }
+        nav ul li a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        nav ul li a:hover {
+            color: #38bdf8;
+        }
+
+        /* Mendesain bagian konten utama */
+        section {
+            padding: 60px 10%;
+            max-width: 900px;
+        }
+        
+        /* Modifikasi khusus halaman beranda (Hero) */
+        #beranda {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+            padding: 80px 10%;
+        }
+        #beranda h1 {
+            font-size: 2.5rem;
+            color: #38bdf8;
+            margin-bottom: 10px;
+        }
+
+        /* Mendesain daftar keahlian */
+        #keahlian ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        #keahlian ul li {
+            background: white;
+            margin: 10px 0;
+            padding: 15px;
+            border-left: 5px solid #38bdf8;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        /* Bagian kaki web (Footer) */
+        footer {
+            background-color: #0f172a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 0.9rem;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Saya</title>
+</head>
+<body>
+
+    <!-- Bagian Navigasi / Menu -->
+    <header>
+        <nav>
+            <h2>Arif Saputra</h2>
+            <ul>
+                <li><a href="#tentang">Tentang Saya</a></li>
+                <li><a href="#keahlian">Keahlian</a></li>
+                <li><a href="#proyek">Proyek</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <hr>
+
+    <!-- Bagian Beranda / Hero -->
+    <section id="beranda">
+        <h1>Halo, Saya Arif Saputra</h1>
+        <p>Mahasiswa Teknik Informatika yang berfokus pada pengembangan perangkat lunak dan manajemen basis data.</p>
+    </section>
+
+    <!-- Bagian Tentang Saya -->
+    <section id="tentang">
+        <h2>Tentang Saya</h2>
+        <p>Saat ini saya sedang menempuh pendidikan di bidang ilmu komputer. Saya memiliki ketertarikan yang besar dalam dunia pemrograman, logika algoritma, dan pengelolaan data terstruktur menggunakan SQL.</p>
+    </section>
+
+    <!-- Bagian Keahlian -->
+    <section id="keahlian">
+        <h2>Keahlian Teknis</h2>
+        <ul>
+            <li><strong>Bahasa Pemrograman:</strong> Java, Pascal</li>
+            <li><strong>Basis Data:</strong> SQL, Database Management</li>
+            <li><strong>Lainnya:</strong> Pemrograman CNC (G-Code)</li>
+        </ul>
+    </section>
+
+    <!-- Bagian Proyek -->
+    <section id="proyek">
+        <h2>Proyek Pilihan</h2>
+        <div class="project-grid">
+            
+            <!-- Kartu Proyek 1 -->
+            <div class="project-card">
+                <h3>Sistem Antrean (Queue System)</h3>
+                <p class="tech-stack">Pascal</p>
+                <p>Program simulasi manajemen antrean berbasis struktur data queue untuk mengoptimalkan waktu tunggu pengguna.</p>
+            </div>
+
+            <!-- Kartu Proyek 2 -->
+            <div class="project-card">
+                <h3>Perancangan Database Relasional</h3>
+                <p class="tech-stack">SQL / DBMS</p>
+                <p>Implementasi skema dan manipulasi basis data terstruktur untuk efisiensi penyimpanan data relasional.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Bagian Kontak -->
+    <footer>
+        <p>&copy; 2026 Arif Saputra. Hubungi saya via Email atau GitHub.</p>
+    </footer>
+
+</body>
+</html>
