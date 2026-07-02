@@ -193,6 +193,61 @@
     }
 }
 
+/* --- Efek Animasi Interaktif --- */
+/* Membuat kartu proyek membesar halus saat disentuh/di-hover */
+.project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Membuat tombol menu navigasi berubah warna dengan halus */
+nav a {
+    transition: color 0.3s ease;
+}
+nav a:hover {
+    color: #0f172a; /* Warna berubah saat di-hover */
+}
+
+/* Gaya khusus untuk section Pendidikan */
+.education-section {
+    padding: 40px 20px;
+    background-color: #f8fafc;
+}
+.edu-box {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin-top: 15px;
+}
+
+/* Gaya untuk bagian Kontak / Footer */
+footer {
+    background-color: #0f172a;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 40px;
+}
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 15px;
+}
+.social-links a {
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+.social-links a:hover {
+    color: white;
+}
+
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -226,6 +281,16 @@
         <p>Saat ini saya sedang menempuh pendidikan di bidang ilmu komputer. Saya memiliki ketertarikan yang besar dalam dunia pemrograman, logika algoritma, dan pengelolaan data terstruktur menggunakan SQL.</p>
     </section>
 
+    <!-- --- SECTION PENDIDIKAN --- -->
+    <section id="pendidikan" class="education-section">
+    <h2>Riwayat Pendidikan</h2>
+    <div class="edu-box">
+        <h3>Universitas Indraprasta PGRI (Unindra)</h3>
+        <p><strong>Jurusan:</strong> Teknik Informatika</p>
+        <p>Fokus pada pengembangan perangkat lunak, manajemen basis data, dan pemrograman dasar.</p>
+    </div>
+    </section>
+
     <!-- Bagian Keahlian -->
     <section id="keahlian">
         <h2>Keahlian Teknis</h2>
@@ -236,31 +301,39 @@
         </ul>
     </section>
 
-    <!-- Bagian Proyek -->
-    <section id="proyek">
-        <h2>Proyek Pilihan</h2>
-        <div class="project-grid">
-            
-            <!-- Kartu Proyek 1 -->
-            <div class="project-card">
-                <h3>Sistem Antrean (Queue System)</h3>
-                <p class="tech-stack">Pascal</p>
-                <p>Program simulasi manajemen antrean berbasis struktur data queue untuk mengoptimalkan waktu tunggu pengguna.</p>
-            </div>
-
-            <!-- Kartu Proyek 2 -->
-            <div class="project-card">
-                <h3>Perancangan Database Relasional</h3>
-                <p class="tech-stack">SQL / DBMS</p>
-                <p>Implementasi skema dan manipulasi basis data terstruktur untuk efisiensi penyimpanan data relasional.</p>
-            </div>
-
+    <!-- --- SECTION PROYEK --- -->
+    <section id="proyek" style="padding: 40px 20px;">
+    <h2>Proyek Terpilih</h2>
+    
+    <!-- Kartu Proyek 1: Basis Data -->
+    <div class="project-card" style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-top: 20px;">
+        <h3 style="margin-top: 0; color: #0f172a;">Sistem Manajemen Basis Data</h3>
+        <p style="color: #475569; font-size: 0.95rem; line-height: 1.5;">Pengembangan struktur database, manipulasi tabel relasional, dan optimasi query data.</p>
+        <div style="margin-top: 15px; display: flex; gap: 8px; flex-wrap: wrap;">
+            <span class="tech-stack">SQL</span>
+            <span class="tech-stack">Database</span>
         </div>
+    </div>
+
+    <!-- Kartu Proyek 2: Aplikasi Antrean / Program Dasar -->
+    <div class="project-card" style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-top: 20px;">
+        <h3 style="margin-top: 0; color: #0f172a;">Program Sistem Antrean (Queue)</h3>
+        <p style="color: #475569; font-size: 0.95rem; line-height: 1.5;">Simulasi struktur data antrean menggunakan algoritma pemrograman terstruktur untuk pengelolaan data yang efisien.</p>
+        <div style="margin-top: 15px; display: flex; gap: 8px; flex-wrap: wrap;">
+            <span class="tech-stack">Pascal</span>
+            <span class="tech-stack">Struktur Data</span>
+        </div>
+    </div>
     </section>
 
-    <!-- Bagian Kontak -->
+    <!-- --- FOOTER & KONTAK --- -->
     <footer>
-        <p>&copy; 2026 Arif Saputra. Hubungi saya via Email atau GitHub.</p>
+    <p>&copy; 2026 Arif Saputra. All Rights Reserved.</p>
+    <div class="social-links">
+        <a href="https://github.com/arifsaputra06" target="_blank">GitHub</a>
+        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        <a href="mailto:email_kamu@gmail.com">Email</a>
+    </div>
     </footer>
 
 </body>
