@@ -2,6 +2,48 @@
 <html lang="id">
 <head>
     <style>
+        /* Desain Grid untuk Kartu Keahlian */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.skill-card {
+    background: #1e293b;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+.skill-card:hover {
+    transform: translateY(-3px);
+    background: #0f172a;
+}
+
+/* Desain Tombol CV yang Menarik */
+.btn-cv {
+    display: inline-block;
+    background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+    color: white;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-cv:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(56, 189, 248, 0.5);
+}
+
         /* Mengaktifkan ruang 3D pada kontainer utama */
         .project-grid {
             display: grid;
@@ -280,6 +322,23 @@ footer {
         <h2>Tentang Saya</h2>
         <p>Saya adalah mahasiswa Teknik Informatika di Universitas Indraprasta PGRI yang memiliki ketertarikan mendalam pada pengembangan perangkat lunak (software development) dan manajemen basis data. Saya senang mengeksplorasi bagaimana data dapat dikelola secara efisien serta bagaimana logika pemrograman dapat menyelesaikan masalah nyata. Selalu bersemangat untuk mempelajari teknologi baru, membangun proyek-proyek inovatif, dan siap berkolaborasi dalam dunia industri teknologi.</p>
     </section>
+
+    <!-- SECTION KEAHLIAN TEKNIS & TOMBOL CV -->
+<section id="skills" style="margin-top: 40px; margin-bottom: 40px;">
+    <h2>Keahlian Teknis</h2>
+    <div class="skills-grid">
+        <div class="skill-card">HTML & CSS</div>
+        <div class="skill-card">JavaScript</div>
+        <div class="skill-card">SQL (Database)</div>
+        <div class="skill-card">Pascal / C++</div>
+        <div class="skill-card">Git & GitHub</div>
+    </div>
+
+    <!-- Tombol Unduh CV -->
+    <div style="text-align: center; margin-top: 30px;">
+        <a href="CV_Arif_Saputra.pdf" download class="btn-cv">📄 Unduh CV Saya</a>
+    </div>
+</section>
 
     <!-- --- SECTION PENDIDIKAN --- -->
     <section id="pendidikan" class="education-section">
